@@ -1,0 +1,47 @@
+.header_navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 87px;
+    background-color:rgb(160, 178, 106);
+    border-bottom: 2px solid rgb(255, 245, 230);
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header_navigation a {
+    text-decoration: none;
+    color: rgb(255, 245, 230);;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.site-name {
+    font-size: 25px;
+}
+
+.header_navigation_content {
+    width: 80%;
+    display: flex;
+}
+
+.header_center {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+  
+.header_icon {
+    margin-right: 8px;
+}
+  
+.header {
+    margin-left: 10px;
+    margin-right: 10px;
+}
