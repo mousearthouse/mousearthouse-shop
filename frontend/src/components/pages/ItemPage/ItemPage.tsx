@@ -2,7 +2,6 @@ import './itemPage.scss';
 import { useParams, useNavigate } from "react-router-dom";
 import getItemById from "@/api/requests/getItemById";
 import { useState, useEffect, useCallback } from "react";
-import { API_URL } from "@/utils/constants";
 
 const FilmPage = () => {
     const navigate = useNavigate();

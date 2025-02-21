@@ -1,7 +1,6 @@
 import '@/components/pages/MainPage/mainPage.scss';
 import { useNavigate } from "react-router-dom";
 import LikeButton from '@/components/pages/LikeBtn';
-import LikeFilled from '@/assets/icons/likeFilled.svg';
 
 export interface ItemCardProps {
     item: Item;

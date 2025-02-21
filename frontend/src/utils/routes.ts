@@ -1,4 +1,5 @@
 export const ROUTES = {
     MAINPAGE: '/',
-    ITEMPAGE: '/item/:itemId'
+    ITEMPAGE: '/item/:itemId',
+    FAVORITESPAGE: '/favorites'
 };

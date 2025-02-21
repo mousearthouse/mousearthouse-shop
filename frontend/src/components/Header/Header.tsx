@@ -16,6 +16,9 @@ const Header: React.FC = () => {
                         <img src={profile} alt="Profile" className="header_icon" />
                         Профиль
                     </a>
+                    <a href="/favorites" className='header'>
+                        Избранное
+                    </a>
                 </nav>                
             </div>
         </header>
