@@ -3,23 +3,14 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 73vh;
 }
 
 .content {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    width: 80%;
+    
 }
-
-.film_container {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px;
-}
-
 
 .item_content {
     display: flex;
@@ -36,16 +27,16 @@ main {
     object-fit: cover;
 }
 
-.film_description {
+.item_description {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding-left: 50px;
 }
 
 .name {
     font-weight: bold;
     font-size: 24px;
-
 }
 
 .time-container:hover {
@@ -71,20 +62,3 @@ main {
 .like-button {
     background-color: #00000000;
 }
-  
-//   .img-container div {
-//     position: absolute;
-//     bottom: 0;
-//     right: 0;
-//     width: 120px;
-//     height: 50px;
-//     background-color: whitesmoke;
-//     border-radius: 10px 0 10px 0;
-//     padding: 6px;
-//     text-align: center;
-//   }
-
-//   .img-container div p {
-//     margin-top: 3px;
-//     font-size: medium;
-//   }

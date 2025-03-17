@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-around;
     height: 87px;
-    background-color:rgb(160, 178, 106);
+    background-color:#bbc480;
     border-bottom: 2px solid rgb(255, 245, 230);
     padding: 0 20px;
     font-size: 16px;
@@ -23,15 +23,22 @@
 }
 
 .site-name {
-    font-size: 25px;
+    font-size: 2em;
 }
 
 .header_navigation_content {
     width: 80%;
     display: flex;
+    justify-content: space-around;
 }
 
 .header_center {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header_left {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -44,4 +51,9 @@
 .header {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+a {
+    font-family: 'CustomFont', serif;
+    font-size: 1.4em;
 }

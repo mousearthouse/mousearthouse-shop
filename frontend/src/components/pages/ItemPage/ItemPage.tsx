@@ -21,10 +21,6 @@ const FilmPage = () => {
         }
     }, [handleItemDataLoading]);
 
-    // const openFilmPage = (selectedDate: string, selectedHall: string, selectedTime: string) => {
-    //     navigate(`?date=${selectedDate}&hall=${selectedHall}&time=${selectedTime}`);
-    // };
-
     if (isLoading) return <Loading />;
     if (!item) return <NotFound />;
 
@@ -45,19 +41,22 @@ const Loading = () => (
 
 const NotFound = () => (
     <main>
-        <h2>Фильм не найден :(</h2>
+        <h2>Такого у меня сейчас нет :(</h2>
     </main>
 );
 
 const ItemDetails = ({ item }: { item: Item }) => (
     <div key={item.id} className="item_content">
         <div className="img-container">
-          <img src={"@/images/mouse1.jpg"} alt={item.name} />
-          </div> 
+            <img src={`/images/mouse${item.id}.png`} alt={item.name} />
+        </div> 
         <div className='item_description'>
             <div className='name'>{item.name}</div>     
-            <p>{item.category_id}</p>  
-               
+            <p>{item.description}</p>  
+            <p>в наличии: <b style={{ color: item.stock === 1 ? "red" : "inherit" }}>
+                {item.stock}</b>
+            </p>
+            <button>Написать в тг!</button>
         </div>         
     </div>
 );

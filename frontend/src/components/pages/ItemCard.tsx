@@ -17,14 +17,14 @@ const ItemCard = ({item}: ItemCardProps) => {
     return (
         <div className="item_card">
             <div className="card-img-container">
-                <img src={`/images/mouse1.jpg`} alt={item.name} />
+                <img src={`/images/mouse${item.id}.png`} alt={item.name} />
             </div>
             <div className="item_card_header">
                 <h3>{item.name}</h3>
                 <LikeButton itemId={item.id} />
             </div>
             <div className="item_card_information">
-                <p>{item.description}</p>
+                <p className='small_text'>{item.description}</p>
                 <span>количество челиков в наличии: <b style={{ color: item.stock === 1 ? "red" : "inherit" }}>
                     {item.stock}</b>
                 </span>

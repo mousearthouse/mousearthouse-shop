@@ -33,7 +33,7 @@ const FavoritesPage = () => {
         <main>
             <div className='content'>
                 <div className='name'>
-                    Избранное
+                    <h2>Избранное</h2>
                 </div>
                 <div className='items_container'>
                     {itemData.map((item) => (
