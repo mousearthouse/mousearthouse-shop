@@ -1,32 +1,17 @@
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 73vh;
-}
-
-.content {
+.item_content {
     display: flex;
     justify-content: center;
-    
 }
 
 .item_content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
+    height: 95vh;
 }
   
-.item_content img {
-    min-width: 500px;
-    min-height: 500px;
-    max-width: 500px;
-    max-height: 500px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
 .item_description {
     display: flex;
     flex-direction: column;
@@ -35,8 +20,8 @@ main {
 }
 
 .name {
-    font-weight: bold;
-    font-size: 24px;
+    font-family: 'CustomFont', serif;
+    font-size: 2em;
 }
 
 .time-container:hover {
@@ -53,12 +38,17 @@ main {
 }
   
 .img-container img {
-    width: 100%;
+    width: auto;
     height: 500px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.like-button {
-    background-color: #00000000;
+.write_me {
+    background-color: rgba(245, 102, 140, 0.5);
+    color: rgb(255, 245, 230);
+    transition: background-color 0.5s;
+}
+.write_me:hover {
+    background-color: rgba(240, 86, 127, 0.6);
 }

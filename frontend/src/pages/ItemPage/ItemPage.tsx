@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import getItemById from "@/api/requests/getItemById";
 import { useState, useEffect, useCallback } from "react";
 
-const FilmPage = () => {
+const ItemPage = () => {
     const navigate = useNavigate();
     const { itemId } = useParams();
     
@@ -26,7 +26,7 @@ const FilmPage = () => {
 
     return (
         <main>
-            <div className='content'>
+            <div className='item_content'>
                 <ItemDetails item={item} />
             </div>
         </main>
@@ -34,9 +34,9 @@ const FilmPage = () => {
 };
 
 const Loading = () => (
-    <main>
+    <div className="content">
         <h2>Загрузка...</h2>
-    </main>
+    </div>
 );
 
 const NotFound = () => (
@@ -56,9 +56,9 @@ const ItemDetails = ({ item }: { item: Item }) => (
             <p>в наличии: <b style={{ color: item.stock === 1 ? "red" : "inherit" }}>
                 {item.stock}</b>
             </p>
-            <button>Написать в тг!</button>
+            <button className='write_me' onClick={() => window.open("https://t.me/forggi", "_blank")}>Написать в тг!</button>
         </div>         
     </div>
 );
 
-export default FilmPage;
+export default ItemPage;

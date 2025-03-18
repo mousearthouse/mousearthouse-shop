@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import './favoritesPage.scss';
-import ItemCard from '@/components/pages/ItemCard';
+import ItemCard from '@/components/ItemCard';
 import getFavoriteItems from '@/api/requests/getFavoriteItems';
 
 const FavoritesPage = () => {
@@ -26,12 +26,9 @@ const FavoritesPage = () => {
         getFavoriteItems({ ids: favoritesData, onDataLoaded: handleDataLoading });
     }, [handleDataLoading]);
 
-    console.log(itemData);
-
-
     return (
         <main>
-            <div className='content'>
+            <div className='favorites_content'>
                 <div className='name'>
                     <h2>Избранное</h2>
                 </div>

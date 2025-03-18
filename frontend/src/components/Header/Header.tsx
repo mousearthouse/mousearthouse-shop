@@ -8,8 +8,7 @@ const Header: React.FC = () => {
             <div className='header_navigation_content'>
                 <div className="header_left">
                     <img src={mouse} alt="Logo" className="header_icon" />
-                    <a className="site-name" href="/">МЫШИНЫЙ САЙТ</a>
-                    
+                    <a className="site-name" href="/">МЫШКИН ШОП</a>
                 </div>
                 <nav className="header_center">
                     <a href="/favorites" className='header'>

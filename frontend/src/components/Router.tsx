@@ -9,7 +9,7 @@ import {
     MainPage,
     ItemPage,
     FavoritesPage
-} from '@/components/imports';
+} from '@/pages/imports';
 
 import { Layout } from '@/components/Layout/Layout';
 
