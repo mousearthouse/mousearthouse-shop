@@ -1,10 +1,9 @@
 import './itemPage.scss';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import getItemById from "@/api/requests/getItemById";
 import { useState, useEffect, useCallback } from "react";
 
 const ItemPage = () => {
-    const navigate = useNavigate();
     const { itemId } = useParams();
     
     const [item, setItem] = useState<Item | null>(null);

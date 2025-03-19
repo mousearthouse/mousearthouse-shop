@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.scss';
-import mouse from '@/assets/mouse.svg';
+import mouse from '/assets/mouse.svg';
 
 const Header: React.FC = () => {
     return (

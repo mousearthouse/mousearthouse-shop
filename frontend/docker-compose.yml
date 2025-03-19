@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: rar-frontend:latest
+    ports:
+      - "80:80" 
+    container_name: rar-client

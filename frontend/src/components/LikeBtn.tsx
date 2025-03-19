@@ -23,7 +23,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({itemId}) => {
     };
 
     return (
-        <img className="like-btn" src={liked ? "src/assets/icons/likeFilled.svg" : "src/assets/icons/likeOutline.svg"} 
+        <img className="like-btn" src={liked ? "assets/icons/likeFilled.svg" : "assets/icons/likeOutline.svg"} 
         alt="Like" onClick={handleClick}/>
     );
 };
