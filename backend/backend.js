@@ -4,11 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'Shop',
-  password: 'helpme',
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
 });
 
 app.use(cors());

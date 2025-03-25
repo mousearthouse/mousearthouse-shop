@@ -1,0 +1,28 @@
+name: Mouse-backend-flow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - backend/*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  backend:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Pull latest changes
+        run: git pull origin main --rebase
+
+      - name: Build & Deploy Backend
+        run: |
+          cd backend
+          docker build -t mousearthouse/rar-backend:latest .
+          cd ..
+          docker-compose up -d

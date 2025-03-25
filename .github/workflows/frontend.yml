@@ -1,0 +1,28 @@
+name: Mouse-frontend-flow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - frontend/*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  frontend:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Pull latest changes
+        run: git pull origin main
+
+      - name: Build & Deploy Frontend
+        run: |
+          cd frontend
+          docker build -t mousearthouse/rar-frontend:latest .
+          cd ..
+          docker-compose up -d
