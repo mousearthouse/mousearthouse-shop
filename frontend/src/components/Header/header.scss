@@ -30,6 +30,10 @@
     justify-content: space-around;
 }
 
+.header_navigation_content a {
+    cursor: pointer;
+}
+
 .header_center {
     display: flex;
     align-items: center;
