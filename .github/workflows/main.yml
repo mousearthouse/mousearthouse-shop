@@ -1,0 +1,49 @@
+name: Mouse-flow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  backend:
+    runs-on: self-hosted
+    if: "contains(github.event.head_commit.modified, 'backend/')"
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Pull latest changes
+        run: git pull
+
+      - name: Build Docker images
+        run: docker-compose build
+
+      - name: Run containers
+        run: docker-compose up -d
+
+  frontend:
+    runs-on: self-hosted
+    if: "contains(github.event.head_commit.modified, 'frontend/')"
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Pull latest changes
+        run: git pull
+
+      - name: Build Docker images
+        run: docker-compose build
+
+      - name: Run containers
+        run: docker-compose up -d
