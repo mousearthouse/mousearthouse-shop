@@ -11,7 +11,7 @@
 
 .footer a {
     font-size: 20px;
-    color:rgb(255, 245, 230);
+    color: rgb(255, 245, 230);
     padding-left: 15px;
 }
 
@@ -33,11 +33,29 @@
     margin: 0;
 }
 
+@media screen and (max-width: 1268px) {
+    .footer_text {
+        font-size: 3.5em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer_text {
+        font-size: 1.7em;
+    }
+}
+
 .columns_container {
     display: flex;
     justify-content: space-around;
     height: 100%;
     width: 90%
+}
+
+@media screen and (max-width: 768px) {
+    .columns_container {
+        flex-direction: column;
+    }
 }
 
 .column {
@@ -48,6 +66,7 @@
     display: flex;
     justify-content: center;
 }
+
 .column.center p {
     text-align: justify;
     width: 60%;

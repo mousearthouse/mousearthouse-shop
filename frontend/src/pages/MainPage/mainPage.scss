@@ -32,13 +32,25 @@ body {
     margin: 0;
 }
 
+@media screen and (max-width: 1268px) {
+    .promo_text {
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .promo_text {
+        font-size: 2em;
+    }
+}
+
 .category_content {
     width: 99%;
     padding-bottom: 15px;
 }
 
 .category_name {
-    margin:auto;
+    margin: auto;
     display: flex;
     justify-content: center;
 }
@@ -64,7 +76,7 @@ body {
 }
 
 .column img {
-    width:fit-content;
+    width: fit-content;
 }
 
 .prokrutka {
@@ -76,6 +88,7 @@ body {
     width: 100%;
     max-width: 95vw;
 }
+
 .prokrutka::-webkit-scrollbar {
     display: none;
 }
@@ -86,7 +99,13 @@ body {
 
 .promo_card img {
     width: 20vw;
-    height:auto;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .promo_card img {
+        width: 100vw;
+    }
 }
 
 .catalog {
@@ -94,7 +113,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
-    background-color:rgba(230, 112, 112, 0.3);
+    background-color: rgba(230, 112, 112, 0.3);
     width: 100%;
 }
 
@@ -128,7 +147,7 @@ body {
     width: 100%;
     height: 300px;
 }
-  
+
 .card-img-container img {
     width: 100%;
     height: 300px;
@@ -136,14 +155,14 @@ body {
     object-fit: cover;
 }
 
-.item_card_header{
+.item_card_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .item_card button {
-    background-color:rgba(245, 102, 140, 0.5);
+    background-color: rgba(245, 102, 140, 0.5);
     transition: background-color 0.5s;
     color: #fff;
     border: none;
@@ -151,11 +170,11 @@ body {
     margin-top: 10px;
     cursor: pointer;
     font-size: 16px;
-    width:100%;
+    width: 100%;
     border-radius: 10px;
     margin-top: auto;
 }
-  
+
 .item_card button:hover {
     background-color: rgba(240, 86, 127, 0.6);
 }
