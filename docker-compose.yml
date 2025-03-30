@@ -3,13 +3,14 @@ services:
     image: mousearthouse/rar-frontend:latest
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - backend
+    volumes:
+    - /home/mouse/nginx/certs:/etc/nginx/certs:ro
 
   backend:
     image: mousearthouse/rar-backend:latest
-    ports:
-      - "3000:3000"
     environment:
       - DATABASE_URL=postgres://myuser:secret@db:5432/rar
     depends_on:
