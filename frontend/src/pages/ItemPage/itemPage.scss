@@ -11,6 +11,14 @@
     padding: 15px;
     height: 95vh;
 }
+
+@media screen and (max-width: 768px) {
+    .item_content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+}
   
 .item_description {
     display: flex;
@@ -36,12 +44,30 @@
     width: 100%;
     height: 500px;
 }
-  
+
 .img-container img {
     width: auto;
     height: 500px;
     border-radius: 10px;
     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .img-container {
+        width: 100%;
+        height: 300px;
+        padding-top: 15px;
+        padding-bottom: 15px;;
+    }
+
+    .img-container img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .item_description {
+        padding: 0px;
+    }
 }
 
 .write_me {

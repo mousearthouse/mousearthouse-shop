@@ -7,7 +7,9 @@ const Footer: React.FC = () => {
             <div className='footer_content'>
                 <div className='columns_container'>
                     <div className="column left">
-                        <p>с огромной любовью,<br/>MOUSEARTHOUSE © 2025<br/>при поддержке HITs ТГУ</p>
+                        <p>с огромной любовью,<br/>MOUSEARTHOUSE © 2025<br/></p>
+                        <span>при поддержке</span>
+                        <a href="https://vk.com/hits_tsu" target="_blank">HITs ТГУ</a>
                     </div>
                     <div className="column center">
                         <p>вам понравился сайт? 

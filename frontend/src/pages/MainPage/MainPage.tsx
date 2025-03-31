@@ -2,11 +2,22 @@ import { useCallback, useEffect, useState } from 'react';
 import './mainPage.scss';
 import ItemCard from '@/components/ItemCard';
 import getCategoryItems from '@/api/requests/getCategoryItems';
-
-const CATEGORIES = [1];
+import getCategories from '@/api/requests/getCategories';
 
 const MainPage = () => {
+    const [categories, setCategories] = useState<Category[] | null>(null);
     
+    const handleCategoriesDataLoading = useCallback((categories: Category[]) => {
+        setCategories(categories);
+        setIsLoading(false);
+    }, []);
+
+    useEffect(() => {
+            getCategories({ onDataLoaded: handleCategoriesDataLoading });
+    }, [handleCategoriesDataLoading]);
+
+    console.log(categories);
+
     const [itemData, setItemData] = useState<{ [key: string]: Item[] }>({});
     const promo_images = Array.from({ length: 9 }, (_, i) => `/images/promo/promo${i + 1}.jpg`);
 
@@ -18,13 +29,15 @@ const MainPage = () => {
     }, []);
 
     useEffect(() => {
-        CATEGORIES.forEach((categoryId) => {
-            getCategoryItems({
-                categoryId,
-                onDataLoaded: handleItemDataLoading,
+        if (categories) {
+            categories.forEach((category) => {
+                getCategoryItems({
+                    categoryId: Number(category.id),
+                    onDataLoaded: handleItemDataLoading,
+                });
             });
-        });
-    }, [handleItemDataLoading]);
+        }
+    }, [categories, handleItemDataLoading]);
 
     if (isLoading) return <Loading />;
 
@@ -55,6 +68,7 @@ const MainPage = () => {
                 </div>
                 <p>- ребята, которые уже нашли дом -</p>
                 <ScrollPromo promo_images={promo_images} />
+                <p className='gray_text'>( листай! )</p>
                 <div className='columns_container'>
                     <div className="column c1"></div>
                     <div className="column c2"></div>
@@ -81,8 +95,8 @@ const MainPage = () => {
 const ScrollPromo = ({ promo_images }: { promo_images: string[] }) => (
     <div className='prokrutka'>
         {promo_images.map((src, index) => (
-            <div className='promo_card'>
-            <img key={index} src={src} alt={`Фото ${index + 1}`} width="150" />
+            <div className='promo_card' key={index}>
+            <img src={src} alt={`Фото ${index + 1}`} width="150" />
             </div>
         ))}
     </div>

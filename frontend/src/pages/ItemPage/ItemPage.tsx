@@ -55,6 +55,7 @@ const ItemDetails = ({ item }: { item: Item }) => (
             <p>в наличии: <b style={{ color: item.stock === 1 ? "red" : "inherit" }}>
                 {item.stock}</b>
             </p>
+            <p>цена: <b>{item.price} ₽</b></p>
             <button className='write_me' onClick={() => window.open("https://t.me/forggi", "_blank")}>Написать в тг!</button>
         </div>         
     </div>

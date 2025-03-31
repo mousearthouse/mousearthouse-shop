@@ -24,6 +24,11 @@
     font-size: 2em;
 }
 
+@media screen and (max-width: 768px) {
+    .site-name {
+        font-size: 1.3em;
+    }
+}
 .header_navigation_content {
     width: 80%;
     display: flex;
@@ -57,5 +62,5 @@
 
 a {
     font-family: 'CustomFont', serif;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }

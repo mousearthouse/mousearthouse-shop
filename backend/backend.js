@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/api/category', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM categories');
-    res.json(result.rows);
+    res.json({ categories: result.rows });
   } catch (error) {
     console.error('Error fetching categories:', error);
     res.status(500).json({ message: 'Internal server error' });
@@ -55,7 +55,6 @@ app.get('/api/item/:itemId', async (req, res) => {
 });
 
 app.post('/api/favorites', async (req, res) => {
-
   const { ids } = req.body;
   console.log(ids)
   if (ids.length === 0) {

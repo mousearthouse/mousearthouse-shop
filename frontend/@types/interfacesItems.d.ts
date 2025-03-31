@@ -6,3 +6,8 @@ interface Item {
     stock: number,
     category_id: string,
 }
+
+interface Category {
+    id: string,
+    name: string,
+}
