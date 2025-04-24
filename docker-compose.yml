@@ -12,7 +12,7 @@ services:
   backend:
     image: mousearthouse/rar-backend:latest
     environment:
-      - DATABASE_URL=postgres://myuser:secret@db:5432/rar
+      - DATABASE_URL=${DATABASE_URL}
     depends_on:
       - db
 
@@ -20,9 +20,9 @@ services:
     image: postgres:15
     restart: always
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: rar
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5430:5432"
     volumes:

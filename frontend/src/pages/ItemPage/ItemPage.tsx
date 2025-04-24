@@ -45,9 +45,9 @@ const NotFound = () => (
 );
 
 const ItemDetails = ({ item }: { item: Item }) => (
-    <div key={item.id} className="item_content">
+    <div key={item.id} className="item">
         <div className="img-container">
-            <img src={`/images/mouse${item.id}.png`} alt={item.name} />
+            <img src={item.photo_url} alt={item.name} />
         </div> 
         <div className='item_description'>
             <div className='name'>{item.name}</div>     

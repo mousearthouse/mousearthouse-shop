@@ -5,6 +5,7 @@ interface Item {
     description: string,
     stock: number,
     category_id: string,
+    photo_url: string,
 }
 
 interface Category {

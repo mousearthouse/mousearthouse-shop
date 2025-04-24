@@ -17,7 +17,7 @@ const ItemCard = ({item}: ItemCardProps) => {
     return (
         <div className="item_card">
             <div className="card-img-container">
-                <img src={`/images/mouse${item.id}.png`} alt={item.name} />
+                <img src={item.photo_url} alt={item.name} />
             </div>
             <div className="item_card_header">
                 <h3>{item.name}</h3>

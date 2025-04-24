@@ -8,15 +8,16 @@ const MainPage = () => {
     const [categories, setCategories] = useState<Category[] | null>(null);
     
     const handleCategoriesDataLoading = useCallback((categories: Category[]) => {
+        categories.sort((a, b) => Number(a.id) - Number(b.id));
+        console.log(categories);
         setCategories(categories);
         setIsLoading(false);
     }, []);
 
     useEffect(() => {
-            getCategories({ onDataLoaded: handleCategoriesDataLoading });
+        getCategories({ onDataLoaded: handleCategoriesDataLoading });
     }, [handleCategoriesDataLoading]);
 
-    console.log(categories);
 
     const [itemData, setItemData] = useState<{ [key: string]: Item[] }>({});
     const promo_images = Array.from({ length: 9 }, (_, i) => `/images/promo/promo${i + 1}.jpg`);
@@ -24,6 +25,8 @@ const MainPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const handleItemDataLoading = useCallback((categoryName: string, items: Item[]) => {
+        items.sort((a, b) => Number(a.id) - Number(b.id));
+        console.log(items);
         setItemData((prev) => ({ ...prev, [categoryName]: items }));
         setIsLoading(false);
     }, []);
