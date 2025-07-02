@@ -31,7 +31,6 @@ app.get('/api/category/:categoryId/items', async (req, res) => {
     }
 
     const categoryName = categoryResult.rows.length > 0 ? categoryResult.rows[0].name : null;
-
     res.json({ categoryName, items: result.rows });
 
   } catch (error) {
