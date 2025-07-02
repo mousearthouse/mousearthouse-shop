@@ -89,7 +89,6 @@ const MainPage = () => {
                     <div className="column c4"></div>
                 </div>
                 <Catalog itemData={itemData} />
-
             </div>
         </main>
     )
